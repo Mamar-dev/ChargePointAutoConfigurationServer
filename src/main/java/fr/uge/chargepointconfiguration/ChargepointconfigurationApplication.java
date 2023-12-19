@@ -13,7 +13,8 @@ public class ChargepointconfigurationApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ChargepointconfigurationApplication.class, args);
-		String host = "169.254.138.53";
+		//String host = "169.254.138.53";
+		String host = "localhost";
 		int port = 8887;
 
 		WebSocketServer server = new SimpleServer(new InetSocketAddress(host, port));
