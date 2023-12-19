@@ -35,3 +35,4 @@ build/
 ### Front files ###
 src/front/build/
 src/front/node_modules/
+src/main/resources/web/
