@@ -1,0 +1,10 @@
+version: '1'
+
+services:
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8000:80
+      - 3306:3306
+    container_name: lastproject
