@@ -8,3 +8,7 @@ services:
       - 8000:80
       - 3306:3306
     container_name: lastproject
+    environment:
+      - PMA_USER=u8nqwmylvpwfepiu
+      - PMA_PASSWORD=DeP7PCvmxQ82Wr8tmyHF
+      - PMA_HOST=bqgrrcg5gr7ffjh7u8ad-mysql.services.clever-cloud.com
