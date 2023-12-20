@@ -24,8 +24,8 @@ public class ChargepointconfigurationApplication {
 	@Bean
 	public CommandLineRunner run(UserRepository userRepository) throws Exception {
 		return (String[] args) -> {
-			User user1 = new User("John", "john@domain.com");
-			User user2 = new User("Julie", "julie@domain.com");
+			Users user1 = new Users("John", "john@domain.com");
+			Users user2 = new Users("Julie", "julie@domain.com");
 			userRepository.save(user1);
 			userRepository.save(user2);
 			userRepository.findAll().forEach(System.out::println);

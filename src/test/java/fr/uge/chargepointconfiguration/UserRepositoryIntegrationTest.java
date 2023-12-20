@@ -20,8 +20,8 @@ public class UserRepositoryIntegrationTest {
    
     @Test
     public void whenCalledSave_thenCorrectNumberOfUsers() {
-        userRepository.save(new User("Bob", "bob@domain.com"));
-        List<User> users = (List<User>) userRepository.findAll();
+        userRepository.save(new Users("Bob", "bob@domain.com"));
+        List<Users> users = (List<Users>) userRepository.findAll();
         
         assertEquals(users.size(), 1);
     }    

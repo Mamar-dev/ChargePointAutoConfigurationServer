@@ -1,8 +1,8 @@
 package fr.uge.chargepointconfiguration.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import org.jetbrains.annotations.NotNull;
+//import jakarta.validation.constraints.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 @Entity
 @Table(name = "user")
