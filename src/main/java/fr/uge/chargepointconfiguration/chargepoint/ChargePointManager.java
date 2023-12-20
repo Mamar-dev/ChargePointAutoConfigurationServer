@@ -1,7 +1,7 @@
 package fr.uge.chargepointconfiguration.chargepoint;
 
-import fr.uge.chargepointconfiguration.User;
 import fr.uge.chargepointconfiguration.UserRepository;
+import fr.uge.chargepointconfiguration.Users;
 import fr.uge.chargepointconfiguration.chargepoint.ocpp.OCPPMessageParser;
 import fr.uge.chargepointconfiguration.chargepoint.ocpp.OCPPVersion;
 import fr.uge.chargepointconfiguration.chargepoint.ocpp.ocpp16.BootNotificationResponse;
@@ -28,7 +28,7 @@ public class ChargePointManager {
         try{
             var message = ocppMessageParser.parseMessage(webSocketRequestMessage);
             System.out.println("Received message: " + message);
-            userRepository.save(new User(webSocketRequestMessage.messageName(),"Borne"));
+            userRepository.save(new Users(webSocketRequestMessage.messageName(),"Borne"));
             var resp = new BootNotificationResponse(LocalDateTime.now().toString(), 60, RegistrationStatus.Accepted);
             messageSender.sendMessage(new WebSocketResponseMessage(3, webSocketRequestMessage.messageId(), JsonParser.objectToJsonString(resp)));
         }catch (IllegalArgumentException e){

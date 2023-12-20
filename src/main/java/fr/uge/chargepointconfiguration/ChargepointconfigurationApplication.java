@@ -27,16 +27,16 @@ public class ChargepointconfigurationApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		var host = "192.168.0.5";
-		//var host = "localhost";
+//		var host = "192.168.0.5";
+		var host = "localhost";
 		var port = 8887;
 
 		WebSocketServer server = new ConfigurationServer(new InetSocketAddress(host, port), userRepository);
 		server.run();
 
 
-		User user1 = new User("John", "john@domain.com");
-		User user2 = new User("Julie", "julie@domain.com");
+		Users user1 = new Users("John", "john@domain.com");
+		Users user2 = new Users("Julie", "julie@domain.com");
 		userRepository.save(user1);
 		userRepository.save(user2);
 		userRepository.findAll().forEach(System.out::println);
