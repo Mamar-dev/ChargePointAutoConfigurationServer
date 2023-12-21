@@ -24,7 +24,7 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig {
 
-  /*
+
   @Bean
   public UserDetailsService userDetailsService() {
     InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
@@ -37,9 +37,9 @@ public class WebSecurityConfig {
       .roles("USER", "ADMIN")
       .build());
     return manager;
-  }*/
+  }
 
-  @Bean
+  /*@Bean
   DataSource dataSource() {
     return new EmbeddedDatabaseBuilder()
       .generateUniqueName(true)
@@ -47,13 +47,13 @@ public class WebSecurityConfig {
       .addScript("schema.sql")
       .addScripts("user_data.sql", "country_data.sql")
       .build();
-  }
+  }*/
 
-  @Bean
+  /*@Bean
   UserDetailsManager users(DataSource dataSource) {
     JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
     return users;
-  }
+  }*/
 
   @Bean
   public SecurityFilterChain filterChain (HttpSecurity http) throws Exception {
@@ -79,14 +79,5 @@ public class WebSecurityConfig {
   @Bean
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
-  }
-
-  public static void main(String[] args) {
-    var need = new WebSecurityConfig();
-    System.out.println(need.passwordEncoder().encode("admin"));
-    System.out.println(need.passwordEncoder().encode("axel"));
-    System.out.println(need.passwordEncoder().encode("maxime"));
-    System.out.println(need.passwordEncoder().encode("marius"));
-    System.out.println(need.passwordEncoder().encode("gael"));
   }
 }
