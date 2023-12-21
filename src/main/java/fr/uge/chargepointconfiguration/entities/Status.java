@@ -12,6 +12,7 @@ public class Status {
     // le nom de la classe et le nom de l'enum)
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_status")
     private int id;
 
     @Column(name = "last_update", nullable = false)
@@ -21,21 +22,18 @@ public class Status {
     @Column(name = "state", nullable = false)
     private boolean state;
     @Column(name = "step", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Step step;
     @Column(name = "step_status", nullable = false)
+    @Enumerated(EnumType.STRING)
     private StatusProcess status;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", referencedColumnName = "id_status", nullable = false)
-    private Chargepoint chargepoint;
+//    @OneToOne(mappedBy = "status")
+//    private Chargepoint chargepoint;
 
-    public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
+//    public int getId() {
+//    return id;
+//  }
 
   public String getError() {
     return error;
@@ -77,24 +75,23 @@ public class Status {
     this.status = status;
   }
 
-  public Chargepoint getChargepoint() {
-    return chargepoint;
-  }
-
-  public void setChargepoint(Chargepoint chargepoint) {
-    this.chargepoint = chargepoint;
-  }
+//  public Chargepoint getChargepoint() {
+//    return chargepoint;
+//  }
+//
+//  public void setChargepoint(Chargepoint chargepoint) {
+//    this.chargepoint = chargepoint;
+//  }
 
   @Override
   public String toString() {
     return "Status{" +
-      "id=" + id +
       ", lastUpdate=" + lastUpdate +
       ", error='" + error + '\'' +
       ", state=" + state +
       ", step=" + step +
       ", status=" + status +
-      ", chargepoint=" + chargepoint +
+//      ", chargepoint=" + chargepoint +
       '}';
   }
 }
