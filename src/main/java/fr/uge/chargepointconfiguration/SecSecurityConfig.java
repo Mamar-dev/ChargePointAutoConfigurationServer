@@ -1,4 +1,4 @@
-package fr.uge.chargepointconfiguration;
+/*package fr.uge.chargepointconfiguration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,4 +47,4 @@ public class SecSecurityConfig {
         return (web) -> web.ignoring().requestMatchers(HttpMethod.GET,
                 "/docs/**", "/resources/**", "/web/**", "/img/**");
     }
-}
+}*/

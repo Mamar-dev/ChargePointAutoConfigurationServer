@@ -25,7 +25,7 @@ public class User {
     }
 
     private enum Role{
-       VISUALISATEUR, EDITEUR, ADMINISTRATEUR;
+       VISUALIZER, EDITOR, ADMINISTRATOR;
     };
     //@NotNull(message = "the role of the user is required, can not be null")
     private Role role;
