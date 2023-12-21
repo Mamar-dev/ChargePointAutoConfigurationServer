@@ -36,17 +36,17 @@ public class Chargepoint {
   @Column(name = "last_edit", nullable = false)
   private Timestamp lastEdit;
 
-//  @OneToOne(cascade = CascadeType.ALL)
-//  @JoinColumn(name = "id_status", referencedColumnName = "id", nullable = false)
-//  private Status status;
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "id_status", referencedColumnName = "id_status", nullable = false)
+  private Status status;
 
-  public int getId() {
-    return id;
-  }
+  @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER) // TODO juger s'il y a un réel besoin d'avoir le firmware tout le temps
+  @JoinColumn(name = "id_firmware", referencedColumnName = "id_firmware", nullable = false)
+  private Firmware firmware;
 
-  public void setId(int id) {
-    this.id = id;
-  }
+//  public int getId() {
+//    return id;
+//  }
 
   public String getSerialNumberChargepoint() {
     return serialNumberChargepoint;
@@ -104,13 +104,21 @@ public class Chargepoint {
     this.lastEdit = lastEdit;
   }
 
-//  public Status getStatus() {
-//    return status;
-//  }
-//
-//  public void setStatus(Status status) {
-//    this.status = status;
-//  }
+  public Status getStatus() {
+    return status;
+  }
+
+  public void setStatus(Status status) {
+    this.status = status;
+  }
+
+  public Firmware getFirmware() {
+    return firmware;
+  }
+
+  public void setFirmware(Firmware firmware) {
+    this.firmware = firmware;
+  }
 
   @Override
   public String toString() {
@@ -123,7 +131,8 @@ public class Chargepoint {
       ", serverAddress='" + serverAddress + '\'' +
       ", configuration='" + configuration + '\'' +
       ", lastEdit=" + lastEdit +
-//      ", status=" + status +
+      ", status=" + status +
+      ", firmware=" + firmware +
       '}';
   }
 }

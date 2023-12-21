@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.c347a472.css",
-    "main.js": "/static/js/main.fc907307.js",
+    "main.js": "/static/js/main.cde1ed65.js",
     "static/js/787.25471cf6.chunk.js": "/static/js/787.25471cf6.chunk.js",
-    "static/media/logo-brs.png": "/static/media/logo-brs.c4fd6881edb8c72e2abb.png",
     "index.html": "/index.html",
     "main.c347a472.css.map": "/static/css/main.c347a472.css.map",
-    "main.fc907307.js.map": "/static/js/main.fc907307.js.map",
+    "main.cde1ed65.js.map": "/static/js/main.cde1ed65.js.map",
     "787.25471cf6.chunk.js.map": "/static/js/787.25471cf6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c347a472.css",
-    "static/js/main.fc907307.js"
+    "static/js/main.cde1ed65.js"
   ]
 }
