@@ -26,13 +26,15 @@ public class ChargepointconfigurationApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		Thread.ofPlatform().start(() -> {
+			var host = "192.168.0.5";
+			//var host = "localhost";
+			var port = 8887;
 
-//		var host = "192.168.0.5";
-		var host = "localhost";
-		var port = 8887;
+			WebSocketServer server = new ConfigurationServer(new InetSocketAddress(host, port), userRepository);
+			server.run();
+		});
 
-		WebSocketServer server = new ConfigurationServer(new InetSocketAddress(host, port), userRepository);
-		server.run();
 
 
 		Users user1 = new Users("John", "john@domain.com");
