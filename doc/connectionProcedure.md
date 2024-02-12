@@ -6,12 +6,15 @@ You will need to go to "Parameters" -> "Network" -> Click on the gear next to "W
 
 In the new window "Wired", go to the tab "IPv4" -> Check, in the "IPv4 method", the "manual" option.  
 
-Now, below, in adresses, write these infos to the according tabs.  
+Now, below, in adresses, write these infos to the according tabs.
 
 ```
-Adress          Mask            Bridge        
-192.168.0.5     255.255.255.0    
+Address          Mask            Bridge        
+"IPv4 address"   255.255.255.0    
 ```
+
+> Note : The machine should have been defined an IP address to listen to. In our case, it is 192.168.0.5.
 
 Then, apply and the connection to the machine should be working.
 
+> Note : If you change the network, don't forget to reset the network parameter on your computer.
